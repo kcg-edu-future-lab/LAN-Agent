@@ -19,6 +19,11 @@ namespace WlcAgentConsole
 
             var r = IsLoginRequired();
             r.Wait();
+            if (!r.Result) return;
+
+            var l = Login(username, password);
+            l.Wait();
+            Console.WriteLine(l.Result);
         }
 
         /// <summary>
@@ -36,5 +41,54 @@ namespace WlcAgentConsole
                 return response.Headers.Location?.OriginalString.StartsWith(LoginUri) == true;
             }
         }
+
+        /// <summary>
+        /// Log in to WLC.
+        /// </summary>
+        /// <param name="username">A username.</param>
+        /// <param name="password">A password.</param>
+        /// <returns>The result of login.</returns>
+        /// <exception cref="HttpRequestException">In network error.</exception>
+        /// <exception cref="InvalidOperationException">In unexpected error.</exception>
+        public static async Task<LoginResult> Login(string username, string password)
+        {
+            var data = new Dictionary<string, string>
+            {
+                { "buttonClicked", "4" },
+                { "err_flag", "0" },
+                { "err_msg", "" },
+                { "info_flag", "0" },
+                { "info_msg", "" },
+                { "redirect_url", "" },
+                { "username", username },
+                { "password", password },
+            };
+            var content = new FormUrlEncodedContent(data);
+
+            using (var http = new HttpClient())
+            {
+                // Throws HttpRequestException in network error.
+                var response = await http.PostAsync(LoginUri, content);
+                if (!response.IsSuccessStatusCode)
+                    throw new InvalidOperationException("Access Error.");
+
+                var responseBody = await response.Content.ReadAsStringAsync();
+                if (responseBody.Contains("Login Successful"))
+                    return LoginResult.LoginSucceeded;
+                if (responseBody.Contains("Login Error"))
+                    return LoginResult.LoginFailed;
+                if (responseBody.Contains("Web Authentication Failure"))
+                    return LoginResult.AlreadyLoggedIn;
+            }
+
+            throw new InvalidOperationException("Unexpected Error.");
+        }
+    }
+
+    public enum LoginResult
+    {
+        LoginSucceeded,
+        LoginFailed,
+        AlreadyLoggedIn,
     }
 }
