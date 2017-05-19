@@ -17,13 +17,27 @@ namespace WlcAgentConsole
 
         static void Main(string[] args)
         {
-            var r = IsLoginRequired();
-            r.Wait();
-            if (!r.Result) return;
+            try
+            {
+                Main2().Wait();
+            }
+            catch (AggregateException ex) when (ex.InnerException is HttpRequestException)
+            {
+                Console.WriteLine("Network Error");
+            }
+            catch (AggregateException ex)
+            {
+                Console.WriteLine(ex.InnerException);
+            }
+        }
 
-            var l = Login(Username, Password);
-            l.Wait();
-            Console.WriteLine(l.Result);
+        async static Task Main2()
+        {
+            var isLoginRequired = await IsLoginRequired();
+            if (!isLoginRequired) return;
+
+            var result = await Login(Username, Password);
+            Console.WriteLine(result);
         }
 
         /// <summary>
