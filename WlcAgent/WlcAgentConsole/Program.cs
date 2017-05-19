@@ -30,12 +30,12 @@ namespace WlcAgentConsole
         /// Check whether the login is required by WLC.
         /// </summary>
         /// <returns>A value that indicates whether the login is required by WLC.</returns>
-        /// <exception cref="HttpRequestException">In network error.</exception>
+        /// <exception cref="HttpRequestException">In a network error.</exception>
         public static async Task<bool> IsLoginRequired()
         {
             using (var http = new HttpClient())
             {
-                // Throws HttpRequestException in network error.
+                // Throws HttpRequestException in a network error.
                 var response = await http.GetAsync(HeartbeatUri);
 
                 return response.Headers.Location?.OriginalString.StartsWith(LoginUri) == true;
@@ -47,9 +47,9 @@ namespace WlcAgentConsole
         /// </summary>
         /// <param name="username">A username.</param>
         /// <param name="password">A password.</param>
-        /// <returns>The result of login.</returns>
-        /// <exception cref="HttpRequestException">In network error.</exception>
-        /// <exception cref="InvalidOperationException">In unexpected error.</exception>
+        /// <returns>The result of the login.</returns>
+        /// <exception cref="HttpRequestException">In a network error.</exception>
+        /// <exception cref="InvalidOperationException">In an unexpected error.</exception>
         public static async Task<LoginResult> Login(string username, string password)
         {
             var data = new Dictionary<string, string>
@@ -67,10 +67,10 @@ namespace WlcAgentConsole
 
             using (var http = new HttpClient())
             {
-                // Throws HttpRequestException in network error.
+                // Throws HttpRequestException in a network error.
                 var response = await http.PostAsync(LoginUri, content);
                 if (!response.IsSuccessStatusCode)
-                    throw new InvalidOperationException("Access Error.");
+                    throw new InvalidOperationException("Unexpected Error.");
 
                 var responseBody = await response.Content.ReadAsStringAsync();
                 if (responseBody.Contains("Login Successful"))
