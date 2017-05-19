@@ -9,19 +9,19 @@ namespace WlcAgentConsole
 {
     class Program
     {
-        const string LoginUri = "https://wlc.int.kcg.edu/login.html";
-        const string HeartbeatUri = "http://www.kcg.ac.jp/images/index/center_line_bg.gif";
+        static string LoginUri { get; } = ConfigurationManager.AppSettings["LoginUri"];
+        static string HeartbeatUri { get; } = ConfigurationManager.AppSettings["HeartbeatUri"];
+
+        static string Username { get; } = ConfigurationManager.AppSettings["Username"];
+        static string Password { get; } = ConfigurationManager.AppSettings["Password"];
 
         static void Main(string[] args)
         {
-            var username = ConfigurationManager.AppSettings["username"];
-            var password = ConfigurationManager.AppSettings["password"];
-
             var r = IsLoginRequired();
             r.Wait();
             if (!r.Result) return;
 
-            var l = Login(username, password);
+            var l = Login(Username, Password);
             l.Wait();
             Console.WriteLine(l.Result);
         }
