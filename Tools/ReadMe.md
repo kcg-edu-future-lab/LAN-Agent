@@ -1,5 +1,5 @@
 ## How to Build App
-- Execute BuildApp.ps1
+- Execute `BuildApp.ps1`
 
 ## Result
 - The version of the app on `AssemblyInfo.cs` will be incremented
