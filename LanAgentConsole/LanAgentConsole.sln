@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WlcAgentConsole", "WlcAgentConsole\WlcAgentConsole.csproj", "{B5E15FBB-BFF8-4E42-AC06-5E9AB4E127D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LanAgentConsole", "LanAgentConsole\LanAgentConsole.csproj", "{4DA8A14B-1AEA-443D-96CE-E113128AF34D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{B5E15FBB-BFF8-4E42-AC06-5E9AB4E127D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B5E15FBB-BFF8-4E42-AC06-5E9AB4E127D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B5E15FBB-BFF8-4E42-AC06-5E9AB4E127D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DA8A14B-1AEA-443D-96CE-E113128AF34D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DA8A14B-1AEA-443D-96CE-E113128AF34D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DA8A14B-1AEA-443D-96CE-E113128AF34D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DA8A14B-1AEA-443D-96CE-E113128AF34D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
