@@ -44,13 +44,15 @@ namespace LanAgentConsole
                 },
             };
 
-            var accessor = accessors[0];
+            foreach (var accessor in accessors)
+            {
+                var isLoginRequired = await accessor.IsLoginRequiredAsync();
+                if (!isLoginRequired) continue;
 
-            var isLoginRequired = await accessor.IsLoginRequiredAsync();
-            if (!isLoginRequired) return;
-
-            var result = await accessor.LoginAsync(Username, Password);
-            Console.WriteLine(result);
+                var result = await accessor.LoginAsync(Username, Password);
+                Console.WriteLine(result);
+                if (result == LoginResult.LoginSucceeded) break;
+            }
         }
     }
 }
