@@ -9,18 +9,18 @@ namespace LanAgentConsole
     public class WlcAccessor : LanAccessor
     {
         /// <summary>
-        /// Check whether the user is already logged in to the LAN.
+        /// Check whether the login is required by the LAN that this class represents.
         /// </summary>
-        /// <returns>A value that indicates whether the user is already logged in to the LAN.</returns>
+        /// <returns>A value that indicates whether the login is required by the LAN that this class represents.</returns>
         /// <exception cref="HttpRequestException">In a network error.</exception>
-        public override async Task<bool> IsLoggedInAsync()
+        public override async Task<bool> IsLoginRequiredAsync()
         {
             using (var http = new HttpClient())
             {
                 // Throws HttpRequestException in a network error.
                 var response = await http.GetAsync(HeartbeatUri);
 
-                return response.Headers.Location?.OriginalString.StartsWith(LoginUri) != true;
+                return response.Headers.Location?.OriginalString.StartsWith(LoginUri) == true;
             }
         }
 

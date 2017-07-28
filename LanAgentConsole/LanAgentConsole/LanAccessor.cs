@@ -9,10 +9,10 @@ namespace LanAgentConsole
         public string HeartbeatUri { get; set; }
 
         /// <summary>
-        /// Check whether the user is already logged in to the LAN.
+        /// Check whether the login is required by the LAN that this class represents.
         /// </summary>
-        /// <returns>A value that indicates whether the user is already logged in to the LAN.</returns>
-        public abstract Task<bool> IsLoggedInAsync();
+        /// <returns>A value that indicates whether the login is required by the LAN that this class represents.</returns>
+        public abstract Task<bool> IsLoginRequiredAsync();
 
         /// <summary>
         /// Log in to the LAN.

@@ -36,8 +36,8 @@ namespace LanAgentConsole
                 HeartbeatUri = "http://www.kcg.ac.jp/images/index/center_line_bg.gif",
             };
 
-            var isLoggedIn = await accessor.IsLoggedInAsync();
-            if (isLoggedIn) return;
+            var isLoginRequired = await accessor.IsLoginRequiredAsync();
+            if (!isLoginRequired) return;
 
             var result = await accessor.LoginAsync(Username, Password);
             Console.WriteLine(result);
