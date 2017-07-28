@@ -30,11 +30,21 @@ namespace LanAgentConsole
 
         static async Task Main2()
         {
-            var accessor = new WlcAccessor
+            var accessors = new LanAccessor[]
             {
-                LoginUri = "https://wlc.int.kcg.edu/login.html",
-                HeartbeatUri = "http://www.kcg.ac.jp/images/index/center_line_bg.gif",
+                new WlcAccessor
+                {
+                    LoginUri = "https://wlc.int.kcg.edu/login.html",
+                    HeartbeatUri = "http://www.kcg.ac.jp/images/index/center_line_bg.gif",
+                },
+                new AdefAccessor
+                {
+                    LoginUri = "http://10.10.10.10:8080/cgi-bin/adeflogin.cgi",
+                    HeartbeatUri = "http://www.kcg.ac.jp/images/index/center_line_bg.gif",
+                },
             };
+
+            var accessor = accessors[0];
 
             var isLoginRequired = await accessor.IsLoginRequiredAsync();
             if (!isLoginRequired) return;
