@@ -13,7 +13,7 @@ These tools support the following LAN controllers:
 A command line tool to log in to LAN controllers automatically.
 
 ### Setup
-- [Download the app](https://github.com/sakapon/WLC-Agent/raw/master/Downloads/LanAgentConsole-1.0.1.zip)
+- [Download the app](https://github.com/kcg-edu-future-lab/LAN-Agent/raw/master/Downloads/LanAgentConsole-1.0.1.zip)
 
 ### Usage
 - Edit `Username` and `Password` on LanAgentConsole.exe.config
@@ -29,7 +29,7 @@ A command line tool to log in to LAN controllers automatically.
 A command line tool to log in to the Cisco Wireless LAN Controller (WLC) automatically.
 
 ### Setup
-- [Download the app](https://github.com/sakapon/WLC-Agent/raw/master/Downloads/WlcAgentConsole-1.0.1.zip)
+- [Download the app](https://github.com/kcg-edu-future-lab/LAN-Agent/raw/master/Downloads/WlcAgentConsole-1.0.1.zip)
 
 ### Usage
 - Edit `Username` and `Password` on WlcAgentConsole.exe.config
