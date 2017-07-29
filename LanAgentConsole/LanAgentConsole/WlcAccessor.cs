@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace LanAgentConsole
 {
+    /// <summary>
+    /// Accesses to the Cisco Wireless LAN Controller (WLC).
+    /// </summary>
     public class WlcAccessor : LanAccessor
     {
         /// <summary>

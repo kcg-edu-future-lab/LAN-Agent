@@ -3,9 +3,19 @@ using System.Threading.Tasks;
 
 namespace LanAgentConsole
 {
+    /// <summary>
+    /// Accesses to a LAN controller.
+    /// </summary>
     public abstract class LanAccessor
     {
+        /// <summary>
+        /// Gets or sets the URI to post the account information.
+        /// </summary>
         public string LoginUri { get; set; }
+
+        /// <summary>
+        /// Gets or sets the URI to check whether the network is available.
+        /// </summary>
         public string HeartbeatUri { get; set; }
 
         /// <summary>
@@ -23,6 +33,9 @@ namespace LanAgentConsole
         public abstract Task<LoginResult> LoginAsync(string username, string password);
     }
 
+    /// <summary>
+    /// Represents the result of a login.
+    /// </summary>
     public enum LoginResult
     {
         LoginSucceeded,

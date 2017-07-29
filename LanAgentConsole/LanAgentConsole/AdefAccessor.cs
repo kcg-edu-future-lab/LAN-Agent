@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace LanAgentConsole
 {
+    /// <summary>
+    /// Accesses to the APRESIA AccessDefender.
+    /// </summary>
     public class AdefAccessor : LanAccessor
     {
         /// <summary>
