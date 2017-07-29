@@ -1,5 +1,10 @@
 # LAN Agent
-A set of tools to log in to LAN controllers automatically, for Windows.
+A set of tools to log in to LAN controllers automatically, for Windows.  
+LAN に自動的にログインするためのツールのセットです。Windows 向けです。
+
+These tools support the following LAN controllers:
+- Cisco Wireless LAN Controller (WLC)
+- APRESIA AccessDefender
 
 ## LAN Agent Console
 A command line tool to log in to LAN controllers automatically.
@@ -32,3 +37,7 @@ A command line tool to log in to the Cisco Wireless LAN Controller (WLC) automat
 
 ### Release Notes
 - **v1.0.1** The first release.
+
+## Future Plans
+- Creates an icon in the notification area to ensure the network periodically.
+- 定期的にネットワークを確認するための通知領域アイコンを作成します。
