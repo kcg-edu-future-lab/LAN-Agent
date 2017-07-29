@@ -43,4 +43,6 @@ A command line tool to log in to the Cisco Wireless LAN Controller (WLC) automat
 
 ## Future Plans
 - Creates an icon in the notification area to ensure the network periodically.
-- 定期的にネットワークを確認するための通知領域アイコンを作成します。
+  - 定期的にネットワークを確認するための通知領域アイコンを作成します。
+- For macOS.
+  - macOS 版。
