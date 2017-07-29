@@ -1,6 +1,7 @@
-## WLC Agent
-A tool to login to Cisco Wireless LAN Controller (WLC) automatically for Windows.
+# LAN Agent
+A tool to log in to LAN controllers automatically, for Windows.
 
+## WLC Agent Console
 ### Setup
 - [Download the app](https://github.com/sakapon/WLC-Agent/raw/master/Downloads/WlcAgentConsole-1.0.1.zip)
 
