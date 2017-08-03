@@ -44,7 +44,7 @@ Cisco Wireless LAN Controller (WLC) に自動的にログインするための�
 - **v1.0.1** The first release.
 
 ## Future Plans
-- Creates an icon in the notification area to ensure the network periodically.
-  - 定期的にネットワークを確認するための通知領域アイコンを作成します。
-- For macOS.
-  - macOS 版。
+- Creates an icon in the notification area to ensure the network periodically.  
+定期的にネットワークを確認するための通知領域アイコンを作成します。
+- For macOS.  
+macOS 版。
