@@ -10,7 +10,8 @@ These tools support the following LAN controllers:
 ![Adef-Login](Images/Adef-Login-Small.png)
 
 ## LAN Agent Console
-A command line tool to log in to LAN controllers automatically.
+A command line tool to log in to LAN controllers automatically.  
+LAN に自動的にログインするためのコマンドライン ツールです。
 
 ### Setup
 - [Download the app](https://github.com/kcg-edu-future-lab/LAN-Agent/raw/master/Downloads/LanAgentConsole-1.0.1.zip)
@@ -26,7 +27,8 @@ A command line tool to log in to LAN controllers automatically.
 - **v1.0.1** The first release.
 
 ## WLC Agent Console
-A command line tool to log in to the Cisco Wireless LAN Controller (WLC) automatically.
+A command line tool to log in to the Cisco Wireless LAN Controller (WLC) automatically.  
+Cisco Wireless LAN Controller (WLC) に自動的にログインするためのコマンドライン ツールです。
 
 ### Setup
 - [Download the app](https://github.com/kcg-edu-future-lab/LAN-Agent/raw/master/Downloads/WlcAgentConsole-1.0.1.zip)
